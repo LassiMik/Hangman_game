@@ -1,6 +1,8 @@
 # Hangman game
 
-This is a stundent project hangman game. I chose to make a hangman game because I thought it would be fun to code with react. I utilized TypeScript with React to make this game. I chose to use Vite over Create-React-App for its inbuilt support for tsx. Making this project I learnt a lot about using TypeScript aswell as conditional rendering in react.
+This is a stundent project hangman game. I chose to make a hangman game because I thought it would be fun to code with react. I utilized TypeScript with React to make this game. 
+
+I chose to use Vite over Create-React-App for its inbuilt support for tsx. Making this project I learnt a lot about using TypeScript aswell as conditional rendering in react.
 
 ## Introduction
 
@@ -11,7 +13,9 @@ This is a learning project in which I wanted to learn how to use TypeScript as i
 I have utilized the following technologies to make this project
 
 [x] React
+
 [x] TypeScript
+
 [x] Vite
 
 ## Summary
