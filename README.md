@@ -22,7 +22,7 @@ I have utilized the following technologies to make this project
 
 This project has made me to study one of this courses subjects, TypeScript more deeply. 
 
-During this project I learnt how to make TypeScript types such as this type for Popup component
+During this project I learnt how to make TypeScript types such as this type for the Popup component
 ```
 type PopupProps = {
 correctLetters: boolean
