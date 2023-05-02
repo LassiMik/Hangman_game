@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+  }
+
 body,
 #root {
     background-color: #34495e;
@@ -17,6 +21,10 @@ body,
     text-Align: center
 }
 
+.keyboardappcontainer {
+    align-self: stretch;
+}
+
 .wordcontainer {
     display: flex;
     gap: .25em;
@@ -30,6 +38,13 @@ body,
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
     gap: .5rem;
+}
+
+.figurecontainer {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 4px;
+    stroke-linecap: round;
 }
 
 .btn {
@@ -64,7 +79,7 @@ body,
 }
 
 .btn.inactive {
-    opacity: .3;
+    color: grey;
 }
 
 .btn:hover:not(:disabled),
@@ -85,8 +100,11 @@ body,
 }
 
 .popup {
+    font-family: monospace;
+    color: white;
+    font-size: large;
     background: #2980b9;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;

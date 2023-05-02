@@ -1,11 +1,12 @@
 import { useState, useCallback } from 'react'
 import words from './wordList.json'
-import { HangmanDrawing } from './components/Drawing';
-import { HangmanWord } from './components/Word';
+import Drawing from './components/Drawing';
+import { Word } from './components/Word';
 import { Keyboard } from './components/Keyboard';
 import Popup from './components/Popup'
 import styles from './App.module.css'
 
+//Get random word
 function getWord() {
   return words[Math.floor(Math.random() * words.length)];
 }
@@ -19,34 +20,35 @@ function App() {
     letter => !guessWord.includes(letter)
   )
 
+  //Add the guessed word to an array
   const addGuessedLetter = useCallback((key: string) => {
-    if (guessedLetters.includes(key)) return
 
     setGuessedLetters(currentLetters => [...currentLetters, key])
   }, [guessedLetters])
 
-  //6 bodyparts
-  const isLoser = incorrectLetters.length >= 6
-  const correctLetters = guessWord.split('').every(letter =>
+  //6 bodyparts. Lose when 6 wrong guesses
+  const wrongGuesses = incorrectLetters.length >= 6
+
+  //Winner when all guessed letters are in guessWord
+  const correctGuesses = guessWord.split('').every(letter =>
     guessedLetters.includes(letter))
 
   function getNewWord() {
-
     setGuessWord(getWord())
     setGuessedLetters([])
   }
 
+
   return (
     <div className={styles.gamecontainer}>
+      {wrongGuesses && <Popup correctLetters={correctGuesses} wrongLetters={incorrectLetters} selectedWord={guessWord} playAgain={getNewWord} />}
+      {correctGuesses && <Popup correctLetters={correctGuesses} wrongLetters={incorrectLetters} selectedWord={guessWord} playAgain={getNewWord} />}
       <div className={styles.gamecontainerchild}>
+        <Drawing numberOfGuesses={incorrectLetters.length} />
+        <Word reveal={wrongGuesses} guessedLetters={guessedLetters} guessWord={guessWord} />
       </div>
-      <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
-      <HangmanWord reveal={isLoser} guessedLetters={guessedLetters} guessWord={guessWord} />
-      {isLoser && <Popup correctLetters={correctLetters} wrongLetters={incorrectLetters} selectedWord={guessWord} playAgain={getNewWord} />}
-      {correctLetters && <Popup correctLetters={correctLetters} wrongLetters={incorrectLetters} selectedWord={guessWord} playAgain={getNewWord} />}
-      <div style={{ alignSelf: 'stretch' }}>
+      <div className={styles.keyboardappcontainer}>
         <Keyboard
-          disabled={correctLetters || isLoser}
           activeLetters={guessedLetters.filter(letter =>
             guessWord.includes(letter)
           )}
