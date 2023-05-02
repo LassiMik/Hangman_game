@@ -1,91 +1,42 @@
-const HEAD = (
-    <div style={{
-        width: '50px',
-        height: '50px',
-        borderRadius: '100%',
-        border: '10px solid black',
-        position: 'absolute',
-        top: '50px',
-        right: '-30px'
-    }}
-    />
-)
-const BODY = (
-    <div style={{
-        width: '10px',
-        height: '100px',
-        background: 'black',
-        position: 'absolute',
-        top: '120px',
-        right: '0'
-    }}
-    />
-)
-const RIGHT_ARM = (
-    <div style={{
-        width: '100px',
-        height: '10px',
-        background: 'black',
-        position: 'absolute',
-        top: '150px',
-        right: '-100px',
-        rotate: '-30deg',
-        transformOrigin: 'left bottom'
-    }}
-    />
-)
-const LEFT_ARM = (
-    <div style={{
-        width: '100px',
-        height: '10px',
-        background: 'black',
-        position: 'absolute',
-        top: '150px',
-        right: '10px',
-        rotate: '30deg',
-        transformOrigin: 'right bottom'
-    }}
-    />
-)
-const RIGHT_LEG = (
-    <div style={{
-        width: '100px',
-        height: '10px',
-        background: 'black',
-        position: 'absolute',
-        top: '210px',
-        right: '-90px',
-        rotate: '60deg',
-        transformOrigin: 'left bottom'
-    }}
-    />
-)
-const LEFT_LEG = (
-    <div style={{
-        width: '100px',
-        height: '10px',
-        background: 'black',
-        position: 'absolute',
-        top: '210px',
-        right: '0',
-        rotate: '-60deg',
-        transformOrigin: 'right bottom'
-    }}
-    />
-)
+import styles from '../App.module.css'
 
-const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
-
-type HangmanDrawingProps = { 
+type drawingProps = {
     numberOfGuesses : number
 }
 
-export function HangmanDrawing ({ numberOfGuesses } : HangmanDrawingProps) {
-    return <div style={{ position: 'relative'}}>
-        {BODY_PARTS.slice(0, numberOfGuesses)}
-        <div style={{ height: '50px', width: '10px', background: 'black', position: 'absolute', top: '0', right: '0' }}/>
-        <div style={{ height: '10px', width: '200px', background: 'black',  marginLeft: '120px'}}/>
-        <div style={{ height: '400px', width: '10px', background: 'black',  marginLeft: '120px'}}/>
-        <div style={{ height: '10px', width: '250px', background: 'black', borderRadius: '10rem 10rem 0 0'}}/>
-    </div>
-}
+const Drawing = ({ numberOfGuesses }:drawingProps) => {
+    const guesses = numberOfGuesses
+  
+    return (
+      <svg height="250" width="200" className={styles.figurecontainer}>
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <line x1="20" y1="230" x2="100" y2="230" />
+  
+        {guesses > 0 &&
+          <circle cx="140" cy="70" r="20" />
+        }
+
+        {guesses > 1 &&
+          <line x1="140" y1="90" x2="140" y2="150" />
+        }
+
+        {guesses > 2 &&
+          <line x1="140" y1="120" x2="120" y2="100" />
+        }
+        {guesses > 3 &&
+          <line x1="140" y1="120" x2="160" y2="100" />
+        }
+
+        {guesses > 4 &&
+          <line x1="140" y1="150" x2="120" y2="180" />
+        }
+        {guesses> 5 &&
+          <line x1="140" y1="150" x2="160" y2="180" />
+        }
+      </svg>
+    )
+  }
+  
+  export default Drawing
