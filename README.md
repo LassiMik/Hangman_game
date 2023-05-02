@@ -33,7 +33,7 @@ playAgain: () => void
 ```
 So when a react component receives props TypeScript knows what type those props are
 
-I have used this video guide from **TraversyMedia** to help me with this project https://www.youtube.com/watch?v=jj0W8tYX_q8&ab_channel=TraversyMedia
+I have used this video guide from **TraversyMedia** to help me with this project https://youtu.be/jj0W8tYX_q8
 
 
 
