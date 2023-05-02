@@ -21,6 +21,7 @@ I have utilized the following technologies to make this project
 ## Summary
 
 This project has made me to study one of this courses subjects, TypeScript more deeply. 
+
 I have used this video guide from **TraversyMedia** to help me with this project https://www.youtube.com/watch?v=jj0W8tYX_q8&ab_channel=TraversyMedia
 
 
