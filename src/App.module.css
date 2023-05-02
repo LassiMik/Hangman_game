@@ -1,4 +1,21 @@
+body,
+#root {
+    background-color: #34495e;
+}
 
+.gamecontainer {
+    max-width: 800px;
+    display: flex;
+    flex-Direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    align-Items: center
+}
+
+.gamecontainerchild {
+    font-Size: 2rem;
+    text-Align: center
+}
 
 .wordcontainer {
     display: flex;
@@ -11,7 +28,7 @@
 
 .keyboardcontainer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr)); 
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
     gap: .5rem;
 }
 
@@ -20,6 +37,19 @@
     border: 3px solid black;
     background: none;
     aspect-ratio: 1 / 1;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    padding: .5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: 'black';
+}
+
+.resetbtn {
+    display: grid;
+    border: 3px solid black;
+    background: none;
+    background-color: hsl(200, 86%, 61%);
     font-size: 2.5rem;
     text-transform: uppercase;
     padding: .5rem;
@@ -40,4 +70,42 @@
 .btn:hover:not(:disabled),
 .btn:focus:not(:disabled) {
     background-color: hsl(200, 100%, 75%);
+}
+
+.popupcontainer {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    background: #2980b9;
+    border-radius: 5px;
+    box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.popup button {
+    cursor: pointer;
+    background-color: #fff;
+    color: #2980b9;
+    border: 0;
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 16px;
+}
+
+.popup button:active {
+    transform: scale(0.98);
+}
+
+.popup button:focus {
+    outline: 0;
 }
