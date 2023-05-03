@@ -8,6 +8,13 @@ I chose to use Vite over Create-React-App for its inbuilt support for tsx. Makin
 
 This is a learning project in which I wanted to learn how to use TypeScript as it was one of our course subjects.
 
+1. Select a random word from imported json file with this function 
+```
+function getWord() {
+  return words[Math.floor(Math.random() * words.length)];
+}
+```
+
 ## Used technologies
 
 I have utilized the following technologies to make this project
