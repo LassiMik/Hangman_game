@@ -58,5 +58,5 @@ So when a react component receives props TypeScript knows what type those props 
 
 I have used this video guide from **TraversyMedia** to help me with this project https://youtu.be/jj0W8tYX_q8
 
-
+I have also used the aforementioned video creators github project https://github.com/codeSTACKr/hangman-react
 
