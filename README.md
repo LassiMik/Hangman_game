@@ -35,6 +35,10 @@ I have utilized the following technologies to make this project
 
 [x] Vite
 
+## App.tsx
+
+The app runs only on the loaded page with multiple components imported. All the communication with user is done by conditional rendering react components and with an endgame popup screen. 
+
 ## Summary
 
 This project has made me to study one of this courses subjects, TypeScript more deeply. 
@@ -49,6 +53,8 @@ playAgain: () => void
 }
 ```
 So when a react component receives props TypeScript knows what type those props are
+
+## Sources
 
 I have used this video guide from **TraversyMedia** to help me with this project https://youtu.be/jj0W8tYX_q8
 
