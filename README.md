@@ -14,6 +14,16 @@ function getWord() {
   return words[Math.floor(Math.random() * words.length)];
 }
 ```
+2. Create equal amount of black lines under the word as word length
+```
+{guessWord.split("").map((letter, index) => (
+    <span style={{ borderBottom: '.1em solid black' }} key={index}>
+    </span>
+))}
+```
+3. Multiple react hooks to keep track of guessed letters, incorrect letters and correct letters.
+4. Checks after every guessed letter to check if user has won or lost
+5. End popup to let the user know if they won or lost as well as play again button
 
 ## Used technologies
 
