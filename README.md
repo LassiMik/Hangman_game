@@ -22,8 +22,10 @@ function getWord() {
 ))}
 ```
 3. Multiple react hooks to keep track of guessed letters, incorrect letters and correct letters.
-4. Checks after every guessed letter to check if user has won or lost
-5. End popup to let the user know if they won or lost as well as play again button
+4. Differentiate guessed letters from wrong or right with color coding
+5. Reveal letters in the word if user has guessed a word correctly
+6. Checks after every guessed letter to check if user has won or lost
+7. End popup to let the user know if they won or lost as well as play again button
 
 ## Used technologies
 
